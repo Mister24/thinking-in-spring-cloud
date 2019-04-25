@@ -22,26 +22,56 @@ public class Blog {
         this.content = content;
     }
 
+    /**
+     * Getter method for property <tt>id</tt>.
+     *
+     * @return property value of id
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Setter method for property <tt>id</tt>.
+     *
+     * @param id value to be assigned to property id
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Getter method for property <tt>name</tt>.
+     *
+     * @return property value of name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Setter method for property <tt>name</tt>.
+     *
+     * @param name value to be assigned to property name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Getter method for property <tt>content</tt>.
+     *
+     * @return property value of content
+     */
     public String getContent() {
         return content;
     }
 
+    /**
+     * Setter method for property <tt>content</tt>.
+     *
+     * @param content value to be assigned to property content
+     */
     public void setContent(String content) {
         this.content = content;
     }
