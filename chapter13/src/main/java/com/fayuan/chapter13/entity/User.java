@@ -18,7 +18,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-
 @Entity
 public class User implements UserDetails, Serializable {
 
@@ -35,17 +34,19 @@ public class User implements UserDetails, Serializable {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+
     private List<Role> authorities;
 
     public User() {
     }
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    Collection<? extends GrantedAuthority> getAuthorities();
+//    String getPassword();
+//    String getUsername();
+//    boolean isAccountNonExpired();
+//    boolean isAccountNonLocked();
+//    boolean isCredentialsNonExpired();
+//    boolean isEnabled();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -94,5 +95,21 @@ public class User implements UserDetails, Serializable {
         return true;
     }
 
+    /**
+     * Getter method for property <tt>id</tt>.
+     *
+     * @return property value of id
+     */
+    public Long getId() {
+        return id;
+    }
 
+    /**
+     * Setter method for property <tt>id</tt>.
+     *
+     * @param id value to be assigned to property id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
