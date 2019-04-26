@@ -34,7 +34,7 @@ public class BlogController {
         List<Blog> list = blogService.getBlogs();
         model.addAttribute("blogsList", list);
 
-        return new ModelAndView("blog/list", "blogModel", model);
+        return new ModelAndView("blogs/list", "blogModel", model);
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")

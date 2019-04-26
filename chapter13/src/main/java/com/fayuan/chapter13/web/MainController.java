@@ -16,33 +16,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class MainController {
-    @RequestMapping("/")
+    @RequestMapping("/") // 重定向到localhost:8081/index
     public String root() {
         return "redirect:/index";
     }
 
-    @RequestMapping("/index")
+    @RequestMapping("/index") // localhost:8081/index
     public String index() {
         return "index";
     }
 
-    @RequestMapping("/user/index")
+    @RequestMapping("/user/index") // localhost:8081/user/index
     public String userIndex() {
         return "user/index";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/login") // localhost:8081/login
     public String login() {
         return "login";
     }
 
-    @RequestMapping("/login-error")
+    @RequestMapping("/login-error") // localhost:8081/login-error
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
         return "login";
     }
 
-    @RequestMapping("/401")
+    @RequestMapping("/401") // localhost:8081/401
     public String accessDenied() {
         return "401";
     }

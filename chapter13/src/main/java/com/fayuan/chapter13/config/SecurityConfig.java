@@ -5,7 +5,6 @@
 package com.fayuan.chapter13.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
@@ -42,10 +42,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configGlobal(AuthenticationManagerBuilder builder) throws Exception {
+//        builder.inMemoryAuthentication()
+//                .withUser("fayuan")
+//                .password("123")
+//                .roles("USER");
+
+        // springsecurity更新后需要对密码进行encode
         builder.inMemoryAuthentication()
+                .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("fayuan")
-                .password("123")
+                .password(new BCryptPasswordEncoder().encode("123"))
                 .roles("USER");
+
+        builder.inMemoryAuthentication()
+                .passwordEncoder(new BCryptPasswordEncoder())
+                .withUser("fayuan1")
+                .password(new BCryptPasswordEncoder().encode("123"))
+                .roles("ADMIN");
     }
 
     @Override
