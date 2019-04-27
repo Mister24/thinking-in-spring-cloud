@@ -40,14 +40,16 @@ public class User implements UserDetails, Serializable {
     public User() {
     }
 
-//    Collection<? extends GrantedAuthority> getAuthorities();
-//    String getPassword();
-//    String getUsername();
-//    boolean isAccountNonExpired();
-//    boolean isAccountNonLocked();
-//    boolean isCredentialsNonExpired();
-//    boolean isEnabled();
-
+    /**
+    // 返回用户设置的权限信息
+    Collection<? extends GrantedAuthority> getAuthorities();
+    String getPassword();
+    String getUsername();
+    boolean isAccountNonExpired();
+    boolean isAccountNonLocked();
+    boolean isCredentialsNonExpired();
+    boolean isEnabled();
+    */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;

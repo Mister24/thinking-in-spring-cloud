@@ -41,24 +41,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
+    UserDetailsService userDetailsService;
+
+    @Autowired
     public void configGlobal(AuthenticationManagerBuilder builder) throws Exception {
-//        builder.inMemoryAuthentication()
-//                .withUser("fayuan")
-//                .password("123")
-//                .roles("USER");
 
-        // springsecurity更新后需要对密码进行encode
+        /**
         builder.inMemoryAuthentication()
-                .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("fayuan")
-                .password(new BCryptPasswordEncoder().encode("123"))
+                .password("123")
                 .roles("USER");
+         */
 
-        builder.inMemoryAuthentication()
-                .passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("fayuan1")
-                .password(new BCryptPasswordEncoder().encode("123"))
-                .roles("USER", "ADMIN");
+        builder.userDetailsService(userDetailsService);
+
+//        // springsecurity更新后需要对密码进行encode
+//        builder.inMemoryAuthentication()
+//                .passwordEncoder(new BCryptPasswordEncoder())
+//                .withUser("fayuan")
+//                .password(new BCryptPasswordEncoder().encode("123"))
+//                .roles("USER");
+//
+//        builder.inMemoryAuthentication()
+//                .passwordEncoder(new BCryptPasswordEncoder())
+//                .withUser("fayuan1")
+//                .password(new BCryptPasswordEncoder().encode("123"))
+//                .roles("USER", "ADMIN");
     }
 
     @Override
