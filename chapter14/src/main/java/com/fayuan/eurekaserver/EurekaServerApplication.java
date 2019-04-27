@@ -1,13 +1,13 @@
-package com.fayuan.chapter14;
+package com.fayuan.eurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Chapter14Application {
+public class EurekaServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Chapter14Application.class, args);
+		SpringApplication.run(EurekaServerApplication.class, args);
 	}
 
 }
