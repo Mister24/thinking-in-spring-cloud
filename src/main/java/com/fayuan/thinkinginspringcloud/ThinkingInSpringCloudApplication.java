@@ -1,5 +1,6 @@
 package com.fayuan.thinkinginspringcloud;
 
+import org.springframework.aop.BeforeAdvice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,4 +11,5 @@ public class ThinkingInSpringCloudApplication {
         SpringApplication.run(ThinkingInSpringCloudApplication.class, args);
     }
 
+    BeforeAdvice
 }
