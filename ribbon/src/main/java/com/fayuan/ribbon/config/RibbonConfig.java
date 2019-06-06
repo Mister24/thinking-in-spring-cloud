@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Ribbon开启负载均衡
+ *
  * @author mr.24
  * @version Id: RibbonConfig, v 1.0 2019-06-06 00:46 Exp $$
  */

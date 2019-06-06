@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Ribbon服务
+ *
  * @author mr.24
  * @version Id: RibbonService, v 1.0 2019-06-06 00:47 Exp $$
  */
 @Service
 public class RibbonService {
+
     @Autowired
     RestTemplate restTemplate;
 
